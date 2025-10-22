@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Riflessioni sul Mondo e la Storia</title>
+  <meta name="description" content="Un archivio vivo di analisi storiche, teologiche e civili: cultura del rancore, punti focali di male, Bibbia e male, etica e politica, riflessioni contemporanee." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--fg:#0f172a;--muted:#334155;--bg:#f8fafc;--card:#ffffff;--accent:#0ea5e9;--ring:rgba(14,165,233,.25)}
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--fg);background:linear-gradient(180deg,#f1f5f9,#f8fafc)}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;background:rgba(255,255,255,.75);backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid #e2e8f0}
+    .nav{display:flex;align-items:center;gap:16px;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:36px;height:36px;border-radius:12px;background:conic-gradient(from 180deg at 50% 50%, #0ea5e9, #22c55e, #f59e0b, #ef4444, #0ea5e9);box-shadow:0 2px 8px rgba(0,0,0,.08)}
+    .title{font-weight:800;letter-spacing:.2px}
+    nav ul{display:flex;gap:14px;flex-wrap:wrap;list-style:none;margin:0;padding:0}
+    nav a{padding:8px 10px;border-radius:10px;color:var(--muted)}
+    nav a.active,nav a:hover{background:#e2f2fe;color:#0c4a6e}
+    .hero{display:grid;gap:18px;padding:28px 0 8px}
+    .hero h1{font-size:clamp(28px,4vw,42px);line-height:1.08;margin:0}
+    .hero p{font-size:clamp(15px,2.2vw,18px);color:var(--muted);margin:0}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin:24px 0}
+    .card{background:var(--card);border:1px solid #e2e8f0;border-radius:16px;padding:16px;box-shadow:0 6px 20px rgba(2,8,23,.04)}
+    .card h3{margin:0 0 8px;font-size:18px}
+    .card p{margin:0 0 12px;color:var(--muted)}
+    .pill{display:inline-flex;gap:8px;align-items:center;padding:6px 10px;border-radius:999px;background:#eff6ff;border:1px solid #bfdbfe;color:#1e3a8a;font-size:12px;font-weight:600}
+    .footer{margin:32px 0 12px;color:#475569;font-size:14px}
+    .search{display:flex;gap:10px}
+    .input{flex:1;border:1px solid #e2e8f0;border-radius:12px;padding:12px 14px;background:white;box-shadow:0 2px 8px rgba(0,0,0,.03)}
+    .btn{border:0;border-radius:12px;padding:12px 14px;background:var(--fg);color:#fff;font-weight:600}
+    .btn:focus,.input:focus{outline:2px solid var(--ring);outline-offset:2px}
+    .tag{display:inline-block;margin:4px 6px 0 0;padding:6px 10px;border-radius:999px;background:#f1f5f9;font-size:12px}
+    .toc{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 0}
+    .muted{color:var(--muted)}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div class="title">Riflessioni sul Mondo e la Storia</div>
+          <div class="muted" style="font-size:12px">Un atlante di coscienza pubblica</div>
+        </div>
+      </div>
+      <nav aria-label="Sezioni principali">
+        <ul>
+          <li><a class="active" href="#home">Home</a></li>
+          <li><a href="#punti-male">Punti focali di male</a></li>
+          <li><a href="#rancore">Cultura del rancore</a></li>
+          <li><a href="#bibbia-male">Bibbia e male</a></li>
+          <li><a href="#etica-politica">Etica e politica</a></li>
+          <li><a href="#contemporanee">Riflessioni contemporanee</a></li>
+          <li><a href="#archivio">Archivio</a></li>
+          <li><a href="#metodo">Metodo</a></li>
+          <li><a href="#contatti">Chi siamo</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home" class="container">
+    <section class="hero">
+      <h1>Rendere visibile il filo che unisce storia, coscienza e responsabilità</h1>
+      <p>Questo sito raccoglie analisi e testi che esplorano come il male si organizza nella storia e nel presente. Non un elenco di mostri, ma uno sforzo per capire i processi: culturali, politici, spirituali.</p>
+      <form class="search" onsubmit="event.preventDefault();">
+        <label class="sr-only" for="q">Cerca nel sito</label>
+        <input id="q" class="input" type="search" placeholder="Cerca tra riflessioni, temi e parole-chiave…" oninput="filterCards(this.value)" />
+        <button class="btn" type="button" onclick="filterCards(document.getElementById('q').value)">Cerca</button>
+      </form>
+      <div class="toc" aria-label="Argomenti frequenti">
+        <span class="tag">male istituzionale</span>
+        <span class="tag">banalità del male</span>
+        <span class="tag">rancore</span>
+        <span class="tag">propaganda</span>
+        <span class="tag">misericordia</span>
+        <span class="tag">democrazia</span>
+      </div>
+    </section>
+
+    <section class="grid" aria-label="Sezioni editoriali">
+      <article class="card" data-tags="punti focali male storia" id="punti-male">
+        <span class="pill">Sezione</span>
+        <h3>Punti focali di male</h3>
+        <p>Schede su figure storiche e contemporanee in cui il male collettivo si è condensato e organizzato. Contesto, meccanismi, responsabilità.</p>
+        <ul class="muted">
+          <li><a href="#" onclick="alert('Placeholder: Hitler — schema di lettura');return false;">Esempio: schema di lettura</a></li>
+          <li><a href="#" onclick="alert('Placeholder: Metodi di propaganda');return false;">Propaganda e conformismo</a></li>
+        </ul>
+      </article>
+
+      <article class="card" data-tags="rancore cultura morale politica" id="rancore">
+        <span class="pill">Sezione</span>
+        <h3>Cultura del rancore</h3>
+        <p>Un quadro teorico che collega economia, politica e identità. Come il rancore diventa linguaggio pubblico e motore di scelte collettive.</p>
+        <ul class="muted">
+          <li><a href="#" onclick="alert('Placeholder: Morale del rancore');return false;">Verso una morale del rancore</a></li>
+        </ul>
+      </article>
+
+      <article class="card" data-tags="bibbia male teologia vangelo" id="bibbia-male">
+        <span class="pill">Sezione</span>
+        <h3>Bibbia e male</h3>
+        <p>Commenti e riflessioni bibliche che illuminano il rapporto tra male, misericordia e giustizia. Dalla Genesi al Vangelo di Marco.</p>
+        <ul class="muted">
+          <li><a href="#" onclick="alert('Placeholder: Marco 4 — luce e verità');return false;">Marco 4 — luce e verità</a></li>
+        </ul>
+      </article>
+
+      <article class="card" data-tags="etica politica società democrazia" id="etica-politica">
+        <span class="pill">Sezione</span>
+        <h3>Etica e politica</h3>
+        <p>Analisi su responsabilità personale e istituzionale, ruolo della legge, limiti del potere e tutela della dignità umana.</p>
+        <ul class="muted">
+          <li><a href="#" onclick="alert('Placeholder: ICE e democrazia');return false;">ICE e democrazia</a></li>
+        </ul>
+      </article>
+
+      <article class="card" data-tags="attualità contemporaneo analisi" id="contemporanee">
+        <span class="pill">Sezione</span>
+        <h3>Riflessioni contemporanee</h3>
+        <p>Letture del presente: conflitti, media, mutazioni culturali. Collegamenti con la memoria storica e la coscienza pubblica.</p>
+        <ul class="muted">
+          <li><a href="#" onclick="alert('Placeholder: Atlante del tempo presente');return false;">Atlante del tempo presente</a></li>
+        </ul>
+      </article>
+
+      <article class="card" data-tags="archivio testi raccolta" id="archivio">
+        <span class="pill">Sezione</span>
+        <h3>Archivio testi</h3>
+        <p>Raccolta integrale dei testi. Ricerca per parola-chiave, tag e data. Ogni voce mantiene il testo completo senza tagli.</p>
+        <ul class="muted">
+          <li><a href="#" onclick="alert('Placeholder: Elenco alfabetico');return false;">Elenco alfabetico</a></li>
+        </ul>
+      </article>
+
+      <article class="card" data-tags="metodo progetto chi siamo contatti" id="metodo">
+        <span class="pill">Info</span>
+        <h3>Metodo e progetto</h3>
+        <p>Perché questo sito. Principi: rigore, chiarezza, tutela della dignità, nessun sensazionalismo, centralità della responsabilità collettiva.</p>
+        <ul class="muted">
+          <li><a href="#" onclick="alert('Placeholder: Linee guida editoriali');return false;">Linee guida editoriali</a></li>
+        </ul>
+      </article>
+
+      <article class="card" data-tags="chi siamo biografia contatti" id="contatti">
+        <span class="pill">Info</span>
+        <h3>Chi siamo</h3>
+        <p>Claudio Mario Betti e collaboratori. Per contatti e invio contributi usare il form dedicato o l'indirizzo email.</p>
+        <ul class="muted">
+          <li><a href="#" onclick="alert('Placeholder: Modulo contatti');return false;">Modulo contatti</a></li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="card">
+      <h3>Come usare questo sito</h3>
+      <p class="muted">Ogni testo mantiene la versione integrale. Le revisioni saranno indicate in fondo alla pagina. È possibile citare con attribuzione. Versione 0.1 (bozza iniziale).</p>
+    </section>
+
+    <p class="footer">© <span id="year"></span> Riflessioni sul Mondo e la Storia • Progetto editoriale non-profit</p>
+  </main>
+
+  <script>
+    // Aggiorna anno nel footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Filtro client-side per le card
+    function filterCards(q){
+      const query = (q||'').toLowerCase().trim();
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card=>{
+        if(!card.dataset.tags){return}
+        const text = (card.innerText + ' ' + card.dataset.tags).toLowerCase();
+        const ok = !query || text.includes(query);
+        card.style.display = ok ? '' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
